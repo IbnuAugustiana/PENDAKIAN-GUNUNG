@@ -358,8 +358,8 @@ function confirmStatusChange(selectElement, id) {
     });
 }
 
-// Initialize DataTable if available
-$(document).ready(function() {
+// Initialize DataTable if available (jQuery tidak dimuat di layout admin)
+window.jQuery && jQuery(function($) {
     if (typeof $.fn.DataTable !== 'undefined') {
         $('#dataTable').DataTable({
             "pageLength": 25,

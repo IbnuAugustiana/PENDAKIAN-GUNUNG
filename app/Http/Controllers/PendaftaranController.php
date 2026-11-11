@@ -148,6 +148,21 @@ class PendaftaranController extends Controller
                 }
             }
 
+            // 🔹 Mode demo: bila key Midtrans belum diisi, pendaftaran tetap berhasil
+            // tanpa membuka popup pembayaran (status pembayaran diproses di halaman Pendaftaran).
+            if (! $this->midtransConfigured()) {
+                return response()->json([
+                    'success' => true,
+                    'snap_token' => null,
+                    'demo' => true,
+                    'message' => 'Pendaftaran berhasil disimpan.',
+                    'redirect' => route('pendaftaran.index'),
+                    'total_biaya' => $total_biaya,
+                    'pendaftaran_id' => $pendaftaran->id_pendaftaran,
+                    'peminjaman_id' => $peminjaman_id,
+                ]);
+            }
+
             // 🔹 Buat transaksi Midtrans
             // Set Midtrans configuration and prepare transaction details
             $this->configureMidtrans();
@@ -376,6 +391,44 @@ class PendaftaranController extends Controller
     }
 
     /**
+     * Halaman pembayaran (invoice) untuk satu pendaftaran.
+     */
+    public function bayar($id)
+    {
+        $pendaftaran = Pendaftaran::with(['rutePendakian.gunung', 'user'])->findOrFail($id);
+
+        // Hanya pemilik pendaftaran atau admin yang boleh membuka invoice
+        if ($pendaftaran->user_id !== Auth::id() && Auth::user()->role !== 'admin') {
+            abort(403);
+        }
+
+        $snapToken = null;
+        $sudahLunas = in_array(strtolower((string) $pendaftaran->status_pembayaran), ['lunas', 'paid'], true);
+
+        if (! $sudahLunas && $this->midtransConfigured()) {
+            try {
+                $this->configureMidtrans();
+                $snapToken = \Midtrans\Snap::getSnapToken([
+                    'transaction_details' => [
+                        'order_id' => 'SIMAKSI-' . $pendaftaran->id_pendaftaran . '-' . time(),
+                        'gross_amount' => (int) ($pendaftaran->total_biaya ?? 0),
+                    ],
+                    'customer_details' => [
+                        'first_name' => $pendaftaran->user->name ?? '',
+                        'email' => $pendaftaran->user->email ?? '',
+                    ],
+                ]);
+            } catch (\Exception $e) {
+                Log::warning('Gagal membuat token pembayaran: ' . $e->getMessage(), [
+                    'pendaftaran_id' => $pendaftaran->id_pendaftaran,
+                ]);
+            }
+        }
+
+        return view('pendaftaran.bayar', compact('pendaftaran', 'snapToken'));
+    }
+
+    /**
      * Handle Midtrans callback
      */
     public function callback(Request $request)
@@ -442,6 +495,14 @@ class PendaftaranController extends Controller
             ]);
             return response()->json(['status' => 'error'], 500);
         }
+    }
+
+    /**
+     * Apakah key Midtrans sudah diisi di environment.
+     */
+    private function midtransConfigured(): bool
+    {
+        return (string) config('midtrans.server_key') !== '';
     }
 
     /**

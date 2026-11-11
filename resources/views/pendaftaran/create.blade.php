@@ -242,11 +242,6 @@
 </script>
 
 {{-- ===================== JS business logic tetap ada & DOM ids tetap sama ===================== --}}
-<script>
-$(document).ready(function(){
-    // no-op placeholder to preserve existing build if jQuery exists.
-});
-</script>
 
 {{-- NOTE: Business logic script dipertahankan dari file lama. Pastikan id/name tetap identik. --}}
 <script>
@@ -271,6 +266,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // 🔹 FETCH DAFTAR ALAT PEMINJAMAN
     // ==========================================================
     function loadAlatPeminjaman() {
+        if (!@json((bool) config('services.peminjaman_api.url'))) {
+            alatContainer.innerHTML = '<p class="text-muted mb-0"><i class="fas fa-info-circle me-1"></i>Layanan peminjaman alat belum tersedia. Pendaftaran tetap bisa dilanjutkan tanpa alat.</p>';
+            return;
+        }
         fetch(@json(rtrim((string) config('services.peminjaman_api.url'), '/') . '/alats'))
             .then(res => {
                 if (!res.ok) throw new Error('Gagal memuat daftar alat');
@@ -447,6 +446,22 @@ document.addEventListener("DOMContentLoaded", function () {
             return res.json();
         })
         .then(data => {
+            if (data.success && !data.snap_token && data.redirect) {
+                const goNext = () => { window.location.href = data.redirect; };
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Pendaftaran Berhasil',
+                        text: data.message || 'Pendaftaran berhasil disimpan.',
+                        confirmButtonColor: '#28a745'
+                    }).then(goNext);
+                } else {
+                    alert(data.message || 'Pendaftaran berhasil disimpan.');
+                    goNext();
+                }
+                return;
+            }
+
             if (!(data.success && data.snap_token)) {
                 alert("Gagal membuat transaksi: " + (data.message || "Terjadi kesalahan."));
                 return;
@@ -1030,6 +1045,22 @@ document.addEventListener("DOMContentLoaded", function () {
             return res.json();
         })
         .then(data => {
+            if (data.success && !data.snap_token && data.redirect) {
+                const goNext = () => { window.location.href = data.redirect; };
+                if (window.Swal) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Pendaftaran Berhasil',
+                        text: data.message || 'Pendaftaran berhasil disimpan.',
+                        confirmButtonColor: '#28a745'
+                    }).then(goNext);
+                } else {
+                    alert(data.message || 'Pendaftaran berhasil disimpan.');
+                    goNext();
+                }
+                return;
+            }
+
             if (data.success && data.snap_token) {
                 let gunungText = "";
                 let ruteText = "";

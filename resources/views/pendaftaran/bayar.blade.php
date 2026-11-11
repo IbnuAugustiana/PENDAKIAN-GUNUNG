@@ -129,8 +129,21 @@
 
 <script type="text/javascript">
   const payButton = document.getElementById('pay-button');
+  const snapToken = @json($snapToken);
   payButton.addEventListener('click', function () {
-    window.snap.pay('{{ $snapToken }}', {
+    if (!snapToken || !window.snap || typeof window.snap.pay !== 'function') {
+      const lunas = {{ in_array(strtolower((string) $pendaftaran->status_pembayaran), ['lunas', 'paid'], true) ? 'true' : 'false' }};
+      Swal.fire({
+        icon: lunas ? 'success' : 'info',
+        title: lunas ? 'Sudah Lunas' : 'Pembayaran Online Belum Aktif',
+        text: lunas
+          ? 'Pendaftaran ini sudah lunas. Silakan tunggu persetujuan admin.'
+          : 'Pembayaran online belum diaktifkan pada versi demo ini. Status pembayaran dapat dilihat di halaman Pendaftaran.',
+        confirmButtonColor: '#28a745'
+      });
+      return;
+    }
+    window.snap.pay(snapToken, {
       onSuccess: function(result){
         Swal.fire({
           icon: 'success',
