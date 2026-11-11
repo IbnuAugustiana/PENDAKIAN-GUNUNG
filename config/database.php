@@ -85,12 +85,13 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
+            // trim(): buang spasi/baris baru yang ikut tertempel di environment variable hosting
             'url' => env('DB_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => trim((string) env('DB_PASSWORD', '')), // buang spasi/baris baru yang ikut tertempel
+            'host' => trim((string) env('DB_HOST', '127.0.0.1')),
+            'port' => trim((string) env('DB_PORT', '5432')),
+            'database' => trim((string) env('DB_DATABASE', 'laravel')),
+            'username' => trim((string) env('DB_USERNAME', 'root')),
+            'password' => trim((string) env('DB_PASSWORD', '')),
             'charset' => env('DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
