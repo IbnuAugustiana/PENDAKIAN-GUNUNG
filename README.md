@@ -1,185 +1,193 @@
-# SIMAKSI Gunung
+<div align="center">
 
-![Laravel](https://img.shields.io/badge/Laravel-12-red?style=for-the-badge&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=for-the-badge&logo=bootstrap)
-![Midtrans](https://img.shields.io/badge/Midtrans-Sandbox-00AEEF?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Portfolio-success?style=for-the-badge)
+<img src="public/images/logo.png" alt="Logo SIMAKSI.COM" width="88">
 
-## Deskripsi Singkat
+# SIMAKSI.COM
 
-SIMAKSI Gunung adalah aplikasi berbasis Laravel yang dirancang untuk membantu proses pengelolaan Surat Izin Masuk Kawasan Konservasi bagi kegiatan pendakian gunung. Sistem ini mendukung alur pendaftaran pendaki, manajemen data gunung dan rute pendakian, dashboard admin dan user, pembayaran Midtrans sandbox, export PDF, serta tampilan responsif untuk kebutuhan presentasi portfolio dan pengembangan lanjutan.
+**Sistem perizinan pendakian gunung (SIMAKSI) berbasis web — pilih gunung, pilih rute resmi, ajukan izin, bayar, dan pantau statusnya dalam satu tempat.**
 
-## Preview / Screenshot
+[![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![GSAP](https://img.shields.io/badge/GSAP-3.13-88CE02?style=for-the-badge&logo=greensock&logoColor=black)](https://gsap.com)
+[![Midtrans](https://img.shields.io/badge/Midtrans-Sandbox-00AEEF?style=for-the-badge)](https://midtrans.com)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://app-eta-ten-11.vercel.app)
 
-![Landing Page] <img width="1685" height="862" alt="image" src="https://github.com/user-attachments/assets/613f5c97-4008-4e27-be59-bbc684f06690" />
-![Dashboard User]<img width="1225" height="835" alt="image" src="https://github.com/user-attachments/assets/880caf58-d9ab-4277-a50a-68b167f36936" />
+### [🌐 Lihat Demo Live](https://app-eta-ten-11.vercel.app)
 
-![Form Pendaftaran]<img width="1093" height="751" alt="image" src="https://github.com/user-attachments/assets/7afe2c2e-2b7f-444d-a9f3-12726cb675ac" />
+</div>
 
-![Riwayat Pendaftaran]<img width="1672" height="755" alt="image" src="https://github.com/user-attachments/assets/c9e1fd39-50d8-4548-8f38-ba25a87e6ddb" />
+![Landing page SIMAKSI.COM](docs/images/landing-page.png)
 
-![Admin Dashboard]<img width="1896" height="872" alt="image" src="https://github.com/user-attachments/assets/fa0f8d4a-97c9-4b1f-8e55-4065b1183d77" />
+## Tentang Proyek
 
-![Admin Gunung]<img width="1895" height="862" alt="image" src="https://github.com/user-attachments/assets/7558a2be-f0d4-4691-8211-f640d078bf01" />
+SIMAKSI (Surat Izin Masuk Kawasan Konservasi) adalah izin yang wajib dimiliki pendaki sebelum naik gunung. **SIMAKSI.COM** memindahkan proses itu ke web: pendaki memilih gunung dan jalur resmi, mengisi formulir beserta data anggota rombongan, mengunggah identitas, membayar lewat Midtrans, lalu memantau status persetujuan dari dashboard. Di sisi lain, admin mengelola data gunung, rute, pendaftaran, pembayaran, dan pengguna dari panel tersendiri.
 
-![Midtrans Payment] <img width="1898" height="861" alt="image" src="https://github.com/user-attachments/assets/3853e46b-80c2-4cb5-adcb-26615e146122" />
+Aplikasi ini sudah berjalan online di **[app-eta-ten-11.vercel.app](https://app-eta-ten-11.vercel.app)** dengan database PostgreSQL di Neon.
 
+## Tampilan
 
-Jika file belum tersedia, lihat panduan di [docs/images/README.md](docs/images/README.md).
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/login.png" alt="Halaman masuk"><p align="center"><b>Masuk</b> — email/password atau akun Google</p></td>
+    <td width="50%"><img src="docs/images/register.png" alt="Halaman daftar"><p align="center"><b>Daftar Akun</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/panduan.png" alt="Halaman panduan"><p align="center"><b>Panduan Pendakian</b> — 5 langkah persiapan</p></td>
+    <td><img src="docs/images/tentang.png" alt="Halaman tentang"><p align="center"><b>Tentang</b> — visi, misi, dan timeline</p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/form-pendaftaran.png" alt="Formulir pendaftaran SIMAKSI"><p align="center"><b>Formulir SIMAKSI</b></p></td>
+    <td><img src="docs/images/admin-dashboard.png" alt="Dashboard admin"><p align="center"><b>Dashboard Admin</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/admin-gunung.png" alt="Manajemen data gunung"><p align="center"><b>Manajemen Gunung</b></p></td>
+    <td></td>
+  </tr>
+</table>
 
-## Fitur Utama
+## Fitur
 
-- Landing page modern untuk pengenalan aplikasi.
-- Authentication user dan admin.
-- Dashboard user untuk melihat status dan riwayat pendaftaran.
-- Dashboard admin untuk monitoring data inti aplikasi.
-- Manajemen data gunung.
-- Manajemen rute pendakian.
-- Form pendaftaran SIMAKSI berbasis web.
-- Upload dokumen identitas pendaki.
-- Pembayaran menggunakan Midtrans sandbox.
-- Export dokumen/riwayat dalam format PDF.
-- Tampilan responsif untuk desktop dan mobile.
+### Untuk Pendaki
+
+- **Landing page** dengan pencarian gunung langsung dari navbar.
+- **Daftar & detail gunung** lengkap dengan lokasi di Google Maps.
+- **Rute pendakian resmi** per gunung.
+- **Formulir SIMAKSI**: tanggal naik/turun, data pendaki utama, anggota rombongan, dan upload foto identitas (KTP/SIM/KK).
+- **Pembayaran online** lewat Midtrans Snap (mode sandbox).
+- **Dashboard pribadi**: ringkasan total pendaftaran, menunggu persetujuan, disetujui, dan belum bayar, plus riwayat pendaftaran.
+- **Cetak formulir SIMAKSI ke PDF.**
+- **Login dengan Google** (aktif bila kredensial Google OAuth diisi).
+- Halaman **Panduan** dan **Tentang**.
+
+### Untuk Admin
+
+- **Dashboard** berisi statistik pengguna, gunung, rute, pendaftaran, dan peminjaman alat.
+- **CRUD data gunung** (nama, lokasi, ketinggian, gambar, koordinat).
+- **CRUD rute pendakian.**
+- **Kelola pendaftaran**: lihat detail, ubah data, dan setujui/tolak pengajuan.
+- **Pantau pembayaran.**
+- **Pantau peminjaman alat** dari sistem peminjaman yang terhubung.
+- **Kelola pengguna**: ubah dan hapus akun.
+
+### Alur Pendaftaran
+
+```text
+Pilih Gunung → Pilih Rute → Isi Formulir SIMAKSI → Bayar (Midtrans) → Pantau Status → Cetak PDF
+```
+
+Status pengajuan: `menunggu` → `disetujui` / `ditolak`. Status pembayaran: `pending` → `lunas`.
 
 ## Tech Stack
 
-- Backend: Laravel 12
-- Bahasa pemrograman: PHP 8.2+
-- Database: MySQL
-- Frontend: Blade, Bootstrap 5, JavaScript
-- Build tool: Vite
-- PDF export: `barryvdh/laravel-dompdf`
-- Payment gateway: `midtrans/midtrans-php`
-- Social login: Laravel Socialite
+| Bagian | Teknologi |
+| --- | --- |
+| Backend | Laravel 12, PHP 8.3 |
+| Database | PostgreSQL di [Neon](https://neon.tech) (production) — MySQL juga bisa untuk lokal |
+| Tampilan | Blade, Bootstrap 5.3, CSS tema sendiri (`public/css/simaksi-theme.css`) |
+| Animasi | GSAP 3.13 + ScrollTrigger (di `public/vendor/gsap/`, menghormati *reduced motion*) |
+| Ikon & font | Font Awesome 6, Plus Jakarta Sans, Bricolage Grotesque |
+| Notifikasi UI | SweetAlert2 |
+| Pembayaran | Midtrans Snap (`midtrans/midtrans-php`) |
+| PDF | `barryvdh/laravel-dompdf` |
+| Login sosial | Laravel Socialite (Google OAuth) |
+| Peta | Google Maps JavaScript API |
+| Hosting | Vercel (runtime container, Docker + FrankenPHP) |
 
-## Struktur Fitur User
+Aset tampilan disajikan langsung dari folder `public/`, jadi **tidak perlu build Node/Vite** untuk menjalankan aplikasi.
 
-- Registrasi dan login akun.
-- Melihat landing page, panduan, daftar gunung, dan rute pendakian.
-- Mengisi formulir pendaftaran SIMAKSI.
-- Upload identitas/dokumen pendukung.
-- Melihat ringkasan biaya dan status pembayaran.
-- Melakukan pembayaran melalui Midtrans sandbox.
-- Melihat riwayat pendaftaran.
-- Mengunduh/cetak dokumen PDF ketika status sudah memenuhi syarat.
+## Menjalankan di Komputer Sendiri
 
-## Struktur Fitur Admin
-
-- Login ke dashboard admin.
-- Melihat ringkasan data utama aplikasi.
-- Mengelola data gunung.
-- Mengelola data rute pendakian.
-- Meninjau data pendaftaran pengguna.
-- Memantau status pembayaran dan status pendaftaran.
-- Mengelola data pendukung yang tampil pada panel administrasi.
-
-## Integrasi Pihak Ketiga
-
-- Midtrans Sandbox untuk simulasi pembayaran.
-- Laravel DOMPDF untuk export PDF.
-- Google OAuth melalui Socialite.
-- Google Maps API untuk dukungan lokasi/peta pada fitur tertentu.
-
-Catatan:
-Beberapa integrasi lanjutan masih bersifat pengembangan bertahap dan dirangkum pada bagian roadmap.
-
-## Instalasi Lokal
-
-1. Clone repository.
-2. Masuk ke folder project.
-3. Install dependency PHP:
+**Kebutuhan:** PHP 8.2+ (ekstensi `pdo_pgsql` atau `pdo_mysql`, `gd`, `zip`), Composer, dan database PostgreSQL atau MySQL.
 
 ```bash
+git clone https://github.com/IbnuAugustiana/PENDAKIAN-GUNUNG.git
+cd PENDAKIAN-GUNUNG
+
 composer install
-```
-
-4. Install dependency frontend:
-
-```bash
-npm install
-```
-
-5. Salin file environment:
-
-```bash
-cp .env.example .env
-```
-
-Untuk Windows PowerShell dapat menggunakan:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-6. Generate application key:
-
-```bash
+cp .env.example .env          # PowerShell: Copy-Item .env.example .env
 php artisan key:generate
 ```
 
-## Konfigurasi `.env`
+Atur koneksi database di `.env`. Contoh untuk Neon (PostgreSQL):
 
-Sesuaikan nilai penting berikut pada file `.env`:
+```env
+DB_CONNECTION=pgsql
+DB_HOST=ep-xxxxxx.us-east-2.aws.neon.tech
+DB_PORT=5432
+DB_DATABASE=neondb
+DB_USERNAME=neondb_owner
+DB_PASSWORD=password-anda
+DB_SSLMODE=require
+```
 
-- `APP_NAME`, `APP_URL`, dan `APP_DEBUG`
-- `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
-- `MIDTRANS_MERCHANT_ID`, `MIDTRANS_CLIENT_KEY`, `MIDTRANS_SERVER_KEY`
-- `GOOGLE_MAPS_KEY`
-- `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI`
-- `WEBHOOK_SECRET`, `INTEGRATION_TOKEN`
-- `PEMINJAMAN_API_URL`, `SIMAKSI_WEBHOOK_URL`, `SIMAKSI_API_TOKEN`
+Untuk MySQL lokal (misalnya XAMPP), cukup pakai nilai bawaan di `.env.example` (`DB_CONNECTION=mysql`, database `simaksi_gunung`).
 
-Gunakan file `.env.example` sebagai template aman tanpa secret asli.
-
-## Menjalankan Migration dan Seeder
-
-Jalankan perintah berikut:
+Lalu buat tabel, isi data awal, dan jalankan server:
 
 ```bash
 php artisan migrate --seed
-```
-
-Jika ingin menjalankan seeder tertentu secara manual:
-
-```bash
-php artisan db:seed --class=AdminSeeder
-php artisan db:seed --class=UserSeeder
-```
-
-## Menjalankan Aplikasi
-
-Jalankan backend Laravel:
-
-```bash
+php artisan storage:link
 php artisan serve
 ```
 
-Jalankan Vite untuk asset frontend:
+Buka **http://127.0.0.1:8000**.
 
-```bash
-npm run dev
-```
+### Variabel `.env` Lainnya
 
-Setelah itu buka:
+| Variabel | Kegunaan |
+| --- | --- |
+| `MIDTRANS_MERCHANT_ID`, `MIDTRANS_CLIENT_KEY`, `MIDTRANS_SERVER_KEY` | Kunci Midtrans (ambil dari dashboard sandbox Midtrans) |
+| `MIDTRANS_IS_PRODUCTION` | `false` untuk sandbox |
+| `GOOGLE_MAPS_KEY` | Peta lokasi gunung |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` | Login dengan Google |
+| `PEMINJAMAN_API_URL`, `SIMAKSI_WEBHOOK_URL`, `SIMAKSI_API_TOKEN`, `INTEGRATION_TOKEN`, `WEBHOOK_SECRET` | Integrasi dengan sistem peminjaman alat (opsional) |
+
+Jangan pernah meng-commit file `.env` yang berisi kunci asli.
+
+## Akun Bawaan Seeder
+
+Setelah `php artisan migrate --seed`, akun berikut tersedia untuk uji coba di lokal:
+
+| Peran | Email | Password |
+| --- | --- | --- |
+| Admin | `admin@gmail.com` | `admin123` |
+
+Akun tambahan bisa dibuat dengan `php artisan db:seed --class=AdminSeeder` (admin `admin@simaksi.com` / `admin123` dan pendaki `user@simaksi.com` / `user123`). Pendaki juga bisa mendaftar sendiri lewat halaman **Daftar**.
+
+> Ganti password akun-akun ini di server production — kredensialnya tercantum di kode seeder yang publik.
+
+## Deploy ke Vercel + Neon
+
+Proyek ini di-deploy memakai **runtime container Vercel**: `vercel.json` mengarahkan semua request ke `Dockerfile`, yang membangun image PHP 8.3 + FrankenPHP dengan ekstensi `pdo_pgsql`.
+
+1. Buat database di [Neon](https://neon.tech), lalu jalankan `php artisan migrate --seed` dari komputer lokal dengan `.env` yang mengarah ke Neon.
+2. Import repository ini di Vercel.
+3. Isi **Settings → Environment Variables** di Vercel: `APP_KEY`, `APP_URL`, `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, kunci Midtrans, dan kunci Google bila dipakai. Nilai non-rahasia (`APP_ENV=production`, `DB_CONNECTION=pgsql`, `DB_SSLMODE=require`, sesi & cache di database) sudah diatur di `Dockerfile`.
+4. Setiap `git push` ke branch `main` otomatis memicu deploy baru.
+
+**Catatan:** file system Vercel tidak permanen, jadi foto identitas yang diunggah bisa hilang saat redeploy. Untuk pemakaian sungguhan, simpan upload di object storage (misalnya S3 atau Cloudflare R2).
+
+## Struktur Folder Penting
 
 ```text
-http://127.0.0.1:8000
+app/Http/Controllers/     Logika halaman pendaki, admin, pembayaran, dan API
+resources/views/          Template Blade (landing, auth, pendaftaran, admin, pdf)
+public/css/               Tema tampilan SIMAKSI
+public/js/                Animasi halaman (GSAP)
+database/migrations/      Struktur tabel
+database/seeders/         Data awal: 13 gunung populer Indonesia, rute, dan akun admin
+docs/images/              Screenshot untuk README
+Dockerfile, Caddyfile     Konfigurasi container untuk Vercel
 ```
 
-## Akun Demo Seeder
+## Pembuat
 
-Beberapa akun demo ditemukan dari seeder yang ada di repository:
+**Ibnu Augustiana** — [github.com/IbnuAugustiana](https://github.com/IbnuAugustiana)
 
-- Admin: `admin@simaksi.com` / `admin123`
-- User: `user@simaksi.com` / `user123`
-- Admin tambahan: `admin@gmail.com` / `admin123`
+Proyek portofolio. Kode sumber: [IbnuAugustiana/PENDAKIAN-GUNUNG](https://github.com/IbnuAugustiana/PENDAKIAN-GUNUNG).
 
-Catatan:
-Gunakan akun demo ini hanya untuk pengujian lokal atau kebutuhan presentasi portfolio.
+### Kredit
 
-## Author
-
-Muhamad Naufal Nazih  
-Portfolio project
+Dikembangkan dari proyek awal *SIMAKSI Gunung* karya Muhamad Naufal Nazih.

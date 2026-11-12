@@ -1,23 +1,24 @@
-# Folder Screenshot
+# Screenshot README
 
-Folder ini digunakan untuk menyimpan screenshot aplikasi yang akan ditampilkan pada `README.md`.
+Folder ini berisi gambar yang ditampilkan di `README.md` utama.
 
-Gunakan nama file berikut agar preview pada README langsung terbaca:
+| File | Halaman |
+| --- | --- |
+| `landing-page.png` | Beranda |
+| `login.png` | Masuk |
+| `register.png` | Daftar akun |
+| `panduan.png` | Panduan pendakian |
+| `tentang.png` | Tentang |
+| `form-pendaftaran.png` | Formulir SIMAKSI |
+| `admin-dashboard.png` | Dashboard admin |
+| `admin-gunung.png` | Manajemen gunung (admin) |
 
-- `landing-page.png`
-- `dashboard-user.png`
-- `form-pendaftaran.png`
-- `riwayat-pendaftaran.png`
-- `admin-dashboard.png`
-- `admin-gunung.png`
-- `midtrans-payment.png`
+Screenshot halaman publik diambil dari situs live dengan Chrome headless (ukuran 1440×900). Opsi reduced motion dipakai supaya animasi GSAP tidak tertangkap setengah jalan:
 
-Saran isi screenshot:
+```bash
+chrome --headless=new --hide-scrollbars --force-prefers-reduced-motion \
+  --window-size=1440,900 --virtual-time-budget=6000 \
+  --screenshot=landing-page.png https://app-eta-ten-11.vercel.app/
+```
 
-- Landing page utama
-- Dashboard user setelah login
-- Form pendaftaran SIMAKSI
-- Riwayat pendaftaran user
-- Dashboard admin
-- Halaman manajemen gunung admin
-- Popup atau halaman pembayaran Midtrans sandbox
+Untuk halaman yang butuh login (dashboard pendaki, riwayat, pembayaran Midtrans), ambil screenshot manual dari browser. Simpan di folder ini, lalu tambahkan ke tabel **Tampilan** di `README.md`.
