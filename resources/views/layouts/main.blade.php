@@ -159,9 +159,10 @@
                 <div class="col-12 col-lg-4" data-reveal="fade-up">
                     <a href="{{ url('/') }}" class="site-footer__brand"><img src="{{ asset('images/logo.png') }}" alt="Logo"> SIMAKSI.COM</a>
                     <p class="site-footer__desc">Platform pengelolaan perizinan pendakian gunung yang modern, rapi, dan mudah dipantau.</p>
+                    <p class="site-footer__credit">Dibuat oleh <a href="https://github.com/IbnuAugustiana" target="_blank" rel="noopener">Ibnu Augustiana</a></p>
                     <div class="site-footer__social">
                         <a href="mailto:info@simaksi.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
-                        <a href="https://github.com/MuhamadNaufal67" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/IbnuAugustiana/PENDAKIAN-GUNUNG" target="_blank" rel="noopener" aria-label="Repository GitHub PENDAKIAN-GUNUNG"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
                 <div class="col-6 col-lg-2" data-reveal="fade-up" data-delay=".05">
@@ -196,13 +197,13 @@
                     <h4>Kontak</h4>
                     <ul>
                         <li><a href="mailto:info@simaksi.com">info@simaksi.com</a></li>
-                        <li><a href="https://github.com/MuhamadNaufal67" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a></li>
+                        <li><a href="https://github.com/IbnuAugustiana/PENDAKIAN-GUNUNG" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a></li>
                     </ul>
                 </div>
             </div>
             <div class="site-footer__bottom">
                 <span>&copy; {{ date('Y') }} SIMAKSI.COM — Jelajahi Alam Indonesia dengan Aman 🌲</span>
-                <span>Dibuat untuk pendaki Indonesia</span>
+                <span>Dibuat oleh <a href="https://github.com/IbnuAugustiana" target="_blank" rel="noopener">Ibnu Augustiana</a> untuk pendaki Indonesia</span>
             </div>
         </div>
     </footer>

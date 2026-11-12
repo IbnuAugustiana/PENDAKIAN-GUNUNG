@@ -821,6 +821,9 @@ html:not(.anim) .step .step__num{ background:linear-gradient(135deg,var(--c-gree
 .site-footer a.site-footer__brand{ color:#fff; font-size:1.25rem; }
 .site-footer__brand img{ width:42px; height:42px; border-radius:12px; background:rgba(255,255,255,.08); padding:3px; }
 .site-footer__desc{ max-width:34ch; font-size:.92rem; line-height:1.75; }
+.site-footer__credit{ margin:.4rem 0 0; font-size:.86rem; color:rgba(255,255,255,.6); }
+.site-footer__credit a,
+.site-footer__bottom a{ color:#fff; font-weight:700; font-size:inherit; }
 .site-footer h4{ color:#fff; font-family:var(--font-body); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1rem; }
 .site-footer ul{ list-style:none; padding:0; margin:0; display:grid; gap:.6rem; }
 .site-footer a{ color:rgba(255,255,255,.72); text-decoration:none; font-size:.92rem; transition:color var(--dur-fast) ease; }
